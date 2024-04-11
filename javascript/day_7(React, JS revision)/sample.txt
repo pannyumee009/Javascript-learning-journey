@@ -1,0 +1,5 @@
+React 
+
+=> node js > 9 > | Node update "npm install n -g"
+=> Browser > chrome 
+=> Editor > vs code

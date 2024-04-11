@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API testing</title>
+    <style>
+      #productTable {
+        border-collapse: collapse;
+        width: 70%;
+        margin: auto;
+        /*text-align: center;*/
+      }
+
+
+      #productTable td,
+      #productTable th {
+        border: 3px solid #ddd;
+        padding: 25px;
+      }
+
+      #productTable tr:nth-child(odd) {
+        background-color:rgb(175, 175, 175);
+      }
+      #productTable tr:nth-child(even) {
+        background-color:#e7e4e4;
+      }
+
+      #productTable tr:nth-child(odd):hover {
+        background-color: #d1d0d0;
+        transition: 1.5s;
+      }
+
+      #productTable tr:nth-child(even):hover {
+        background-color: rgb(255, 253, 253);
+        transition: 1.5s;
+      }
+
+      #productTable th {
+        padding-top: 17px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04aa6d;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="productTable"></table>
+    <script>
+      let productTable = document.getElementById("productTable");
+      //https://fakestoreapi.com/products
+      //asyncs await
+      //both ways can be used
+      //async function dataFetching(){
+      //  let response = await fetch("https://fakestoreapi.com/products");
+      //  let json_response = await response.json()
+      //  console.log(json_response)
+      //}
+      //let dataFetching = async () => {
+      //  let response = await fetch("https://fakestoreapi.com/products");
+      //  let json_response = await response.json()
+      //  console.log(json_response)
+      //}
+
+      //dataFetching();
+
+      //using fetching method
+      fetch("https://fakestoreapi.com/products")
+        .then((res) => res.json())
+        .then((products) => {
+          let temp = "";
+          products.forEach((item) => {
+            temp += `
+                      <tr>
+                        <td>${item.id}</td>
+                        <td>${item.title}</td>
+                        <td>${item.description}</td>
+                        <td><img width="80px" src="${item.image}"</td>
+                      </tr>`;
+          });
+          console.log(products);
+          productTable.innerHTML = `<tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Photo</th>
+                      </tr> ${temp}`;
+        });
+    </script>
+  </body>
+</html>

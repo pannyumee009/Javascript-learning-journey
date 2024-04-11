@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+    <title>mini muli</title>
+  </head>
+  <body></body>
+  <script>
+    //2 input => 1 (ali): => 2 => times
+    let status = confirm("Do you wanna play???");
+    if (status) {
+      let digit = prompt("Enter your digit ...");
+      let times = prompt("Enter times ...");
+
+      if (digit != "" && times != "") {
+        for (let start_point = 1; start_point <= times; start_point++) {
+          //document.write(
+          //  digit + " x " + start_point + " = " + digit * start_point + "<br>"
+          document.write(`<h1 style="color: green;">${digit} x ${start_point} = ${digit * start_point} <br></h1>`)
+          ;
+        }
+        document.write("<h2 style='color: red;'>the end</h2>");
+      } else {
+        document.write(
+          "<h1 style='color: red;'>One of your inputs has empty value.. Reload and try again!!!</h>"
+        );
+      }
+    } else {
+      document.write("<h1 style ='color: orange;'>Exit the game</h1>");
+    }
+  </script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8">
+    <meta name="viewpoint" content="width:device-width, initial-scale=1.0"/>
+    <title>Day 3</title>
+  </head>
+  <body>
+    Day 3
+    <hr>
+  </body>
+  <script>
+    //local, global variable
+    let name = 'code lab' //global
+    
+    function getName(){
+      let job = 'programmer'; //local (it will be known within the function, not outside, if calls, error can occur)
+      console.log(job);
+    }
+    
+    for(let i = 0; i<=3; i++){
+      console.log(name);
+    }
+
+    getName()
+
+    //array
+
+    let newArray = [1,2,-2,0.7];
+    
+    //for(let i = 0; i<newArray.length; i++){
+    //  console.log(newArray[0]); //value
+    //}
+
+    newArray.forEach(element => {
+      console.log(element);
+    })
+
+    //another array
+    let expArray = new Array(); //rare to use
+
+    expArray[0] = 1;
+    expArray[1] = 2;
+
+    console.log(expArray);
+
+
+    //array concat()
+    let a =[2,3,4];
+    let b =[1,5,6];
+
+    console.log(a.concat(b))
+
+    //object syntax
+    let sample ={
+      name: "code",
+      location: "Myanmar",
+      greeting: () =>{
+        return this //dom mar twar kaw nay lot bar ma ma paw
+      }, //greeting:() =>{return 'hello'}
+      call: function(){
+        return this //let tae mar call lot ya
+      },
+      fruits: ['mango','banana']
+    };
+    console.log(sample.greeting().name);
+    console.log(sample.call().fruits);
+//
+//    console.log(sample.name);
+//    console.log(sample['location'])
+//    console.log(sample.greeting())
+//    console.log(sample.fruits[1])
+
+
+    //another way obj
+    let obj_sample = new Object();
+    obj_sample.obj1 = 'red';
+    obj_sample.obj2 = 'blue';
+    obj_sample.obj3 = 'green';
+
+    console.log(obj_sample)
+
+    let num_sample = [1,2,3];
+    //let num_one = num_sample[0]
+    //let num_two = num_sample[2]
+    //let num_three = num_sample[1]
+    const [num_one,num_two,num_three] = num_sample; //in short 
+    console.log(num_one,num_three,num_two)
+
+    let n = {
+      username: 'pann',
+      userplace: 'myanmar'
+    }
+
+    let{username, userplace} = n;
+    console.log(n)
+  </script>
+</html>

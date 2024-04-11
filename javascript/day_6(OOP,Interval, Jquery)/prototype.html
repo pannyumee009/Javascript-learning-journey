@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype</title>
+</head>
+<body>
+  Prototype
+</body>
+<script>
+  function Customer(name, email){
+    this.name =name;
+    this.email=email;
+
+    this.login = function(){
+      console.log(`Login with ${email}`)
+    }
+
+    this.logout = function(){
+      console.log(`Logout with ${email}`)
+    }
+    Customer.prototype.loading = ()=>{
+    console.log(`Loading... with email ${email}`)
+  }
+  }
+
+  let customerOne = new Customer("aung", "aung@gmail.com")
+  let customerTwo = new Customer("su", "su@gmail.com")
+  let customerThree = new Customer("aye", "aye@gmail.com")
+  //Customer.prototype.loading = ()=>{                       //writing function with prototype,only show object but we can call them to see the value
+  //  console.log(`Loading... with email ${email}`)
+  //}
+  console.log(customerOne)
+  customerTwo.login()
+  customerThree.loading()
+</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8">
+    <meta name="viewpoint" content="width:device-width, initial-scale=1.0"/>
+    <title>Day 3</title>
+  </head>
+  <body>
+    Day 3
+    <hr>
+  </body>
+  <script>
+    let num1=10;
+    let num2=20;
+    
+    //first way
+    function greeting(){
+      document.write("hello world"+ "<br>");
+    }
+
+    greeting();
+
+    //second way
+    let morning = function(){
+      document.write("morning..." + "<br>")
+    }
+
+    morning();
+
+    //example
+    //one argument function (in Java, void function)
+    function callUser(name = "PYM"){     //default value if user does not put anything
+      document.write(`my name is ${name}` + "<br>");
+    }
+
+    callUser("Pann")
+
+    //multi argument function(in Java, void function)
+    function sum1(name, age){
+      document.write(name, age + "<br>")
+    }
+
+    sum1("pann"+ "<br>" + 20 + "<br>")
+
+    //multi argument function(in Java, type function)
+    function sum(num1, num2){
+      let result = num1 + num2;
+      return result;
+    }
+
+    document.write(sum(10,20)+ "<br>")
+
+    //ES6
+    //arrow function
+    let call = () => {
+      return "this is testing message"
+    }
+
+    document.write(call()+ "<br>")
+
+    let minus = (num) => {
+      return num;
+    }
+
+    document.write(minus(100)+ "<br>");
+
+    let multi = (n1, n2) => {
+      return n1 * n2;
+    }
+
+    document.write(multi(100,200)+ "<br>")
+
+    //array and function
+    let returnArray = () => ['a', 'b','c']
+
+    let result = returnArray();
+
+    result.forEach(element => {
+      document.write(`${element} <br>`)
+    })
+
+    //object and function
+    let returnObj = () => {
+      return{
+        name:'pann',
+        job: 'programmer'
+      }
+    }
+
+    console.log(returnObj()) //if we open that in dom, return value will be[obj,obj] not value.
+    console.log(returnObj().name) //to open the specific one
+
+    let obj = ()=> ({name:'pann', job:'programmer'})
+    console.log(obj())
+  </script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" id="firstNum" />
+      <input type="text" id="secNum" />
+      <select id="operator">
+        <option value="plus">+</option>
+        <option value="minus">-</option>
+        <option value="multi">*</option>
+        <option value="divide">/</option>
+      </select>
+      <br />
+      <input type="button" value="Calculate" id="calculate" />
+      <!--type should be button-->
+      <!--<input type="submit" value="Calculate" id="calculate"> not working because it is working with form action-->
+      <!--<button od="calculate">Click</button> not working because it is working with form action-->
+    </form>
+    <h1 id="result">Result : 0</h1>
+  </body>
+  <script>
+    let num1 = document.getElementById("firstNum");
+    let num2 = document.getElementById("secNum");
+    let operator = document.getElementById("operator");
+    let btn_calculate = document.getElementById("calculate");
+    let result = document.getElementById("result");
+
+    btn_calculate.addEventListener("click", function () {
+      user_operator = operator.value
+      let final_answer = 0;
+      //console.log(num1,num2,operator)
+      switch (user_operator) {
+        case "plus":
+          final_answer = parseInt(num1.value) + parseInt(num2.value);
+          break;
+        case "minus":
+          final_answer = parseInt(num1.value) + parseInt(num2.value);
+          break;
+        case "multi":
+          final_answer = parseInt(num1.value) + parseInt(num2.value);
+          break;
+        case "divide":
+          final_answer = parseInt(num1.value) + parseInt(num2.value);
+          break;
+        //default:
+        //  result = 0;
+        //  break;
+      }
+      console.log(final_answer)
+      result.innerHTML = `Result : ${final_answer}`
+      //result.innerText = `jfjfkdd <h1>${final_answer}</h1>` //can add only strings
+      num1.value = 0;
+      num2.value = 0;
+    });
+
+  </script>
+</html>

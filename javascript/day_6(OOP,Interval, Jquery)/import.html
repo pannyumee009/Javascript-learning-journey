@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Export</title>
+</head>
+<body>
+  
+</body>
+<script type="module">   //must include type, without type, import case will not happen
+  
+  import data from "./export.js";
+  console.log(data);
+
+  //let userData = data.userData;
+  //let user_name = data.user_name;
+
+  let{userData, user_name} = data;
+  console.log(userData,user_name)
+</script>
+ 
+
+</html>

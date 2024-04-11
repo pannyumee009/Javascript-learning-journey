@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP</title>
+  </head>
+  <body>
+    OOP
+  </body>
+  <script>
+    //without oop
+    //literal object
+    //var userOne = {
+    //  name: 'tun tun',
+    //  age : 30,
+    //  email: 'pannyumi@gmail.com',
+    //  login(){
+    //    console.log(`login with ${this.email}`)
+    //  }
+    //}
+    //console.log(userOne)
+    //userOne.login()
+
+    class Person {
+      constructor(name, age, email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+      }
+      login() {
+        console.log(`login with ${this.email} !`);
+      }
+      logout() {
+        console.log(`logout with ${this.email} !`);
+      }
+    }
+    //construction = function
+    //to call class, need to build object
+    let user_1 = new Person("aung aung", 30, "aung@gmail.com");
+    let user_2 = new Person("k", 32, "k@gmail.com");
+    let user_3 = new Person("m", 21, "m@gmail.com");
+    console.log(user_1.email);
+    user_1.login();
+
+    //extends
+    class Aladin extends Person {
+      constructor(name, age, email, phone) {
+        //can't use this keyword since we copy them from person class, need to use super()
+        super(name, age, email); //super=>parent | sub=>child
+        this.phone = phone;
+        this.score= 0;
+      }
+
+      greeting(){
+        console.log("hello world")
+        return this;
+      }
+
+      good_morning(){
+        console.log("Good Morning")
+      }
+
+      static good_night(){    //call from class name
+        console.log("Good Night")
+      }
+
+      increaseScore(){
+        this.score++;
+        console.log(this.score);
+        return this;       //to repeat
+      } 
+    }
+
+    let admin = new Aladin("pan", 34, "pan@gmail.com", "093898736736");
+    //console.log(admin);
+    //admin.greeting();
+    //Aladin.good_night();  //calling class name
+    admin.increaseScore().increaseScore().increaseScore().greeting()
+    admin.good_morning();
+    Aladin.good_night()
+
+    //to see prototype
+    console.log(Math)
+  </script>
+</html>

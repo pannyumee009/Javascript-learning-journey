@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <p id="demo">Code learning</p>
+    <h1>this is heading</h1>
+    <h1 class="title">This is red</h1>
+    <img id="user_profile" src=" " width="300px" alt="anime picture">
+  </body>
+  <script>
+    console.log(document.getElementById("demo").innerHTML);
+    console.log(document.getElementsByTagName("h1")[0].innerHTML);
+    console.log(document.getElementsByClassName("title")[0].innerHTML);
+
+    let name = document.getElementById("demo");
+    name.innerHTML='this is test'
+    console.log(name)
+    console.log(document.querySelectorAll('h1.title')[0].innerHTML);
+    document.getElementById("user_profile").src="https://img.freepik.com/premium-photo/cute-handsome-anime-boy-blue-light_675932-435.jpg";
+   
+  </script>
+</html>

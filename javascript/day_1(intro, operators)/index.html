@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  <title>test</title>
+  </head>
+  <body>
+    
+  </body>
+  <script type="module">
+    let num = 25;
+    let Bigint_test = BigInt('123444');
+    let boolean_test = true;
+    let undefined_test = undefined;
+    let symbol_test = Symbol();
+    let null_test = null;
+    let obj_test = {
+      name : 'mgmg'
+    }
+    let obj_test1 = new Object();
+
+    console.log(num, Bigint_test, boolean_test,undefined_test, symbol_test, null_test,obj_test, obj_test1);
+    let email = 'pann@gmail.com';
+    let password = 'code';
+    if (email == 'pann@gmail.com' && password == 'code'){
+      console.log('login success');
+    }else{
+      console.log('error login fail');
+    }
+
+    let status = true;
+    console.log(!status);
+
+    let answer = ( user_name == 'pann') ? 'right' : 'wrong'
+    console.log(answer);
+    
+    import item from '../day_6(OOP,Interval, Jquery)/export.js'
+
+    console.log(item)
+  </script>
+  
+</html>

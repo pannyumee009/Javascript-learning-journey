@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>methods</title>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+  </body>
+  <script>
+    //concat
+    let ary_one=[1,2,3];
+    let ary_two=[4,5,6];
+
+    let ary_three = ary_one.concat(ary_two);
+    console.log(ary_three);
+
+    //delete using trim method
+    let cusNm = "          pann          ";
+    cusNm=cusNm.trim();
+    console.log(cusNm)
+
+
+    //map method
+    let price=[10,20,30];
+    let new_price = price.map((item =>{
+      return item+3;          //change array value
+    }))
+    console.log(new_price);
+
+    //toFixed method
+    let price_nw =1.4444789
+    let new_price_nw= price_nw.toFixed(3); //<= float least 3
+    console.log(new_price_nw)
+
+    //lowercase/uppercase
+    let n = "apple";
+    console.log(n.toLowerCase());
+    console.log(n.toUpperCase());
+
+    //sub-str
+    let user_name='Pann Yu'
+    console.log(user_name.substring(0,3));  //string calling in python
+
+    //split(string to array)
+    let u = "This is testing message";
+    console.log(u.split(" "))
+
+    //toString(array to string)
+    let price_list = [20,30,40];
+
+    console.log(price_list.toString());
+  </script>
+</html>

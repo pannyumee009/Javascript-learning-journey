@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+  </head>
+  <body>
+    <p id="title1" class="title">This is paragraph.</p>
+    <button id="show_btn">Show</button>
+    <button id="hide_btn">Hide</button>
+    <br>
+    <br>
+    <input type="text" id="user_name" />
+    <button id="user_btn">Get user Data</button> <br><br>
+
+    <button id="ajax_btn">Fetch data with Ajaz</button>
+  </body>
+  <!--jquery source from cdnjs.com(open source library kyi)-->
+  <!--Jquery CDN link-->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
+  <script>
+    $(document).ready(function () {
+      $("#user_btn").click(function () {
+        //console.log($("#user_name").val());
+        $("#user_name").val("this is testing input");
+      });
+
+      //jquery code must be inside this format
+      $("#show_btn").click(function () {
+        //alert('hello');
+        //$(".title").html("<h1 style='color: red'>Code projects</h1>", 1000);    //1000=> 1s add duration
+        $(".title").show(1000);
+        
+      });
+
+      $("#hide_btn").click(function () {
+        $(".title").hide(1000);
+      });
+    });
+
+    //console.log($(".title").text())  //same with innerText in JS
+    //console.log($(".title").html())    //same with innerHTML in JS
+    //console.log($("#title").html("code"))  //adding to tag
+  
+    //ajax(jquery fetching)
+    
+    $("#ajax_btn").click(function(){
+      //$.get(URL,type, callback); //format
+      //get data from other's api
+      try{
+        $.ajax({
+        url: "https://fakestoreapi.com/products",  //change json format and return originally, no need to change to json format
+        type: 'GET',  //capital or small, both are okay
+        success: function(response){           //must be success 
+          console.log(response);}    //here
+        })    
+      }catch(e){
+        console.log("error occurs, plz try later", error)
+      }
+    })
+  </script>
+</html>

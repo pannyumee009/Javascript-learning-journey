@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Fetching Jquery</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #pTable {
+        border-collapse: collapse;
+        width: 80%;
+        margin: auto;
+      }
+
+      #pTable td,
+      #pTable th {
+        border: 1px solid rgb(104, 100, 100);
+        padding: 10px;
+        font-family: "Urbanist", sans-serif;
+        font-weight: bolder;
+        text-align: center;
+      }
+
+      #pTable tr:nth-child(odd) {
+        background-color: #ffe4c9;
+        transition-duration: 1.5s;
+      }
+
+      #pTable tr:nth-child(even) {
+        background-color: #bed1cf;
+        transition-duration: 1.5s;
+      }
+
+      #pTable tr:nth-child(odd):hover {
+        background-color: rgb(252, 214, 175);
+        color: #6c0345;
+        /*font-size: 1.09rem;*/
+      }
+
+      #pTable tr:nth-child(even):hover {
+        background-color: #a5d2ce;
+        color: #003c43;
+      }
+
+      #pTable th {
+        padding-top: 17px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #ffa365;
+        color: black;
+        font-family: "Lilita One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="pTable"></table>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://fakestoreapi.com/products",
+        type: "get",
+        success: function (items) {
+          //console.log(items)
+          let array = "";
+          items.forEach((element) => {
+            array += `
+          <tr>
+            <td>${element.id}</td>
+            <td>${element.category}</td>
+            <td style="text-align: left">${element.description}</td>
+            <td><img width="80px" style="border-radius: 25%" src= "${element.image}"</td>
+            <td>${element.price}</td>
+            <td>${element.rating.rate}</td>
+          </tr>`;
+
+            //console.log(array)
+          });
+          $("#pTable").html(`<tr>
+                              <th>ID</th>
+                              <th>Category</th>
+                              <th>Description</th>
+                              <th>Image</th>
+                              <th>Price</th>
+                              <th>Rating</th>
+                          </tr> ${array}`);
+        },
+      });
+    });
+  </script>
+</html>

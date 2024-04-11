@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM events</title>
+  </head>
+  <body>
+    <input type="text" id="userInput" oninput="changeUpperCase()" />
+    <button onclick="greeting()" id="click">Click Me</button>
+    <div id="container"></div>
+  </body>
+  <script>
+    let addButton = document.getElementById("click");
+    let container = document.getElementById("container");
+        function greeting(){  //1 way (onclick call)
+          alert("hello world")         //in body, we can add function in onclick
+        }
+    
+        //call id and add function(2 way)
+        addButton.addEventListener("click",function(){
+          alert("alert alert")
+          alert("alert alert")
+        })
+    
+        function changeUpperCase(){
+          //let userInput = document.getElementById("userInput");
+          userInput.value = userInput.value.toUpperCase();
+        }
+
+    let newElement = document.createElement("h3");
+    let new_text = document.createTextNode("This is text node");
+    newElement.append(new_text);
+    container.append(newElement);
+  </script>
+</html>

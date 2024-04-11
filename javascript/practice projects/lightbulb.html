@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>What can JavaScript do?</h2>
+
+    <p>JavaScript can change HTML attribut values.</p>
+
+    <p>
+      In this mini project, JavaScript changes the value of the src(source)
+      attribute of an image.
+    </p>
+    <!--<button onclick="document.getElementById('myImage').src='onbulb1.jpg'">
+      Turn on the light
+    </button>
+
+    <img id="myImage" src="offbulb1.jpg" style="width: 100px" />
+
+    <button onclick="document.getElementById('myImage').src='offbulb1.jpg'">
+      Turn off the light</button
+    >-->
+    <button onclick="onBulb()">Turn on the light</button>
+    <img
+      id="myImage"
+      src="offbulb1.jpg"
+      alt="Off bulb photo"
+      style="width: 100px"
+    />
+    <button onclick="offBulb()">Turn off the light</button>
+  </body>
+  <script>
+    function onBulb() {
+      myImage.innerHTML = document.getElementById("myImage").src =
+        "onbulb1.jpg";
+      
+    }
+
+    function offBulb() {
+      myImage.innerHTML = document.getElementById("myImage").src =
+        "offbulb1.jpg";
+    }
+  </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dom</title>
+    <style src=""></style>
+  </head>
+  <body>
+    <h1 id ="title" style="color:red">This is DOM.</h1>
+    <h2 id="date">Date
+    </h2>
+  </body>
+  <script>
+    let header_text = document.getElementById("title");
+    header_text.style.color='blue';
+    let tdyDateDom= document.getElementById('date')
+    let tdyDate = new Date();
+    let day = tdyDate.getDate();
+    let month = tdyDate.getMonth() +1;//month show one month behind, add one to get real month
+    let year = tdyDate.getFullYear();
+    console.log(tdyDate)
+    console.log(day)
+    console.log(month)
+    console.log(year)
+    tdyDateDom.innerHTML = `Today Date is ${day}/ ${month}/ ${year}`;
+    
+  </script>
+</html>

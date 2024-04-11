@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP</title>
+</head>
+<body>
+  OOP
+</body>
+<script>
+  //without oop
+  //literal object
+  //var userOne = {
+  //  name: 'tun tun',
+  //  age : 30,
+  //  email: 'pannyumi@gmail.com',
+  //  login(){
+  //    console.log(`login with ${this.email}`)
+  //  }
+  //}
+  //console.log(userOne)
+  //userOne.login()
+
+  class Person{
+    constructor(name, age, email){
+      this.name = name;
+      this.age = age;
+      this.email = email;
+    }
+    login(){
+      console.log(`login with ${this.email} !`)
+    }
+  }
+  //to call class, need to build object
+  let user_1 = new Person("aung aung", 30, "aung@gmail.com");
+  let user_2 = new Person("k", 32, "k@gmail.com");
+  let user_3 = new Person("m", 21, "m@gmail.com");
+  console.log(user_1.email)
+  user_1.login()
+</script>
+</html>
